@@ -19,11 +19,10 @@ class PreflowPushAlgorithmTestcases(unittest.TestCase):
         :return:
         """
         self.place = PlaceWorkflowNet("UniversalTestPlace", set(), set())
-        self.transition_nothing = TransitionWorkflowNet("Test transition, not consuming or producing", set(), set())
-        self.transition_only_consuming = TransitionWorkflowNet("Test transition, only consuming", {self.place}, set())
-        self.transition_only_producing = TransitionWorkflowNet("Test transition, only producing", set(), {self.place})
-        self.transition_producing_and_consuming = TransitionWorkflowNet("Test transition, consuming and producing",
-                                                                        {self.place}, {self.place})
+        self.transition_nothing = TransitionWorkflowNet("Test transition, not consuming or producing", preset=set(), postset=set())
+        self.transition_only_consuming = TransitionWorkflowNet("Test transition, only consuming", preset={self.place}, postset=set())
+        self.transition_only_producing = TransitionWorkflowNet("Test transition, only producing", preset=set(), postset={self.place})
+        self.transition_producing_and_consuming = TransitionWorkflowNet("Test transition, consuming and producing", preset={self.place}, postset={self.place})
 
     def test_first_example(self):
         """

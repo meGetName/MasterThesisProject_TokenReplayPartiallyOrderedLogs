@@ -1,0 +1,1503 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<log xes.version="1849-2016" xes.features="nested-attributes" xmlns="http://www.xes-standard.org/">
+	<extension name="Concept" prefix="concept" uri="http://www.xes-standard.org/concept.xesext" />
+	<extension name="Lifecycle" prefix="lifecycle" uri="http://www.xes-standard.org/lifecycle.xesext" />
+	<extension name="Identity" prefix="identity" uri="http://www.xes-standard.org/identity.xesext" />
+	<extension name="Organizational" prefix="org" uri="http://www.xes-standard.org/org.xesext" />
+	<extension name="Time" prefix="time" uri="http://www.xes-standard.org/time.xesext" />
+	<string key="origin" value="csv" />
+	<trace>
+		<string key="concept:name" value="1" />
+		<string key="description" value="Simulated process instance" />
+		<float key="multiplicity" value="524.0" />
+		<float key="po_name" value="1.0" />
+		<event>
+			<int key="identity:id" value="0" />
+			<string key="org:resource" value="System" />
+			<date key="time:timestamp" value="1970-01-02T12:23:00+00:00" />
+			<string key="concept:name" value="Register" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="1" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="1" />
+			<string key="org:resource" value="Tester3" />
+			<date key="time:timestamp" value="1970-01-02T12:30:00+00:00" />
+			<string key="concept:name" value="Analyze Defect" />
+			<string key="lifecycle:transition" value="complete" />
+			<string key="defectType" value="6" />
+			<string key="phoneType" value="T2" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="2" />
+					<string key="1" value="4" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="2" />
+			<string key="org:resource" value="SolverC1" />
+			<date key="time:timestamp" value="1970-01-02T12:49:00+00:00" />
+			<string key="concept:name" value="Repair (Complex)" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="3" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="3" />
+			<string key="org:resource" value="Tester3" />
+			<date key="time:timestamp" value="1970-01-02T12:55:00+00:00" />
+			<string key="concept:name" value="Test Repair" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<string key="numberRepairs" value="0" />
+			<string key="defectFixed" value="true" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="5" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="4" />
+			<string key="org:resource" value="System" />
+			<date key="time:timestamp" value="1970-01-02T13:10:00+00:00" />
+			<string key="concept:name" value="Inform User" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="5" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="5" />
+			<string key="org:resource" value="System" />
+			<date key="time:timestamp" value="1970-01-02T13:10:00+00:00" />
+			<string key="concept:name" value="Archive Repair" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<string key="numberRepairs" value="0" />
+			<string key="defectFixed" value="true" />
+			<list key="po_successors">
+				<values>
+				</values>
+			</list>
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="10" />
+		<string key="description" value="Simulated process instance" />
+		<float key="multiplicity" value="101.0" />
+		<float key="po_name" value="2.0" />
+		<event>
+			<int key="identity:id" value="6" />
+			<string key="org:resource" value="System" />
+			<date key="time:timestamp" value="1970-01-01T11:09:00+00:00" />
+			<string key="concept:name" value="Register" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="7" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="7" />
+			<string key="org:resource" value="Tester2" />
+			<date key="time:timestamp" value="1970-01-01T11:15:00+00:00" />
+			<string key="concept:name" value="Analyze Defect" />
+			<string key="lifecycle:transition" value="complete" />
+			<string key="defectType" value="3" />
+			<string key="phoneType" value="T1" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="8" />
+					<string key="1" value="11" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="8" />
+			<string key="org:resource" value="SolverS1" />
+			<date key="time:timestamp" value="1970-01-01T11:42:00+00:00" />
+			<string key="concept:name" value="Repair (Simple)" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="9" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="9" />
+			<string key="org:resource" value="Tester6" />
+			<date key="time:timestamp" value="1970-01-01T11:48:00+00:00" />
+			<string key="concept:name" value="Test Repair" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<string key="numberRepairs" value="1" />
+			<string key="defectFixed" value="false" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="10" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="10" />
+			<string key="org:resource" value="System" />
+			<date key="time:timestamp" value="1970-01-01T11:54:00+00:00" />
+			<string key="concept:name" value="Restart Repair" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="12" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="11" />
+			<string key="org:resource" value="System" />
+			<date key="time:timestamp" value="1970-01-01T11:55:00+00:00" />
+			<string key="concept:name" value="Inform User" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="14" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="12" />
+			<string key="org:resource" value="SolverS2" />
+			<date key="time:timestamp" value="1970-01-01T12:03:00+00:00" />
+			<string key="concept:name" value="Repair (Simple)" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="13" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="13" />
+			<string key="org:resource" value="Tester4" />
+			<date key="time:timestamp" value="1970-01-01T12:09:00+00:00" />
+			<string key="concept:name" value="Test Repair" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<string key="numberRepairs" value="2" />
+			<string key="defectFixed" value="true" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="14" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="14" />
+			<string key="org:resource" value="System" />
+			<date key="time:timestamp" value="1970-01-01T12:14:00+00:00" />
+			<string key="concept:name" value="Archive Repair" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<string key="numberRepairs" value="2" />
+			<string key="defectFixed" value="true" />
+			<list key="po_successors">
+				<values>
+				</values>
+			</list>
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="1000" />
+		<string key="description" value="Simulated process instance" />
+		<float key="multiplicity" value="211.0" />
+		<float key="po_name" value="3.0" />
+		<event>
+			<int key="identity:id" value="21" />
+			<string key="org:resource" value="System" />
+			<date key="time:timestamp" value="1970-01-22T06:23:00+00:00" />
+			<string key="concept:name" value="Register" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="22" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="22" />
+			<string key="org:resource" value="Tester6" />
+			<date key="time:timestamp" value="1970-01-22T06:28:00+00:00" />
+			<string key="concept:name" value="Analyze Defect" />
+			<string key="lifecycle:transition" value="complete" />
+			<string key="defectType" value="3" />
+			<string key="phoneType" value="T3" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="23" />
+					<string key="1" value="25" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="23" />
+			<string key="org:resource" value="SolverS3" />
+			<date key="time:timestamp" value="1970-01-22T06:49:00+00:00" />
+			<string key="concept:name" value="Repair (Simple)" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="24" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="24" />
+			<string key="org:resource" value="Tester6" />
+			<date key="time:timestamp" value="1970-01-22T06:58:00+00:00" />
+			<string key="concept:name" value="Test Repair" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<string key="numberRepairs" value="1" />
+			<string key="defectFixed" value="true" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="26" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="25" />
+			<string key="org:resource" value="System" />
+			<date key="time:timestamp" value="1970-01-22T07:03:00+00:00" />
+			<string key="concept:name" value="Inform User" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="26" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="26" />
+			<string key="org:resource" value="System" />
+			<date key="time:timestamp" value="1970-01-22T07:08:00+00:00" />
+			<string key="concept:name" value="Archive Repair" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<string key="numberRepairs" value="1" />
+			<string key="defectFixed" value="true" />
+			<list key="po_successors">
+				<values>
+				</values>
+			</list>
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="109" />
+		<string key="description" value="Simulated process instance" />
+		<float key="multiplicity" value="9.0" />
+		<float key="po_name" value="4.0" />
+		<event>
+			<int key="identity:id" value="75" />
+			<string key="org:resource" value="System" />
+			<date key="time:timestamp" value="1970-01-03T09:10:00+00:00" />
+			<string key="concept:name" value="Register" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="76" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="76" />
+			<string key="org:resource" value="Tester6" />
+			<date key="time:timestamp" value="1970-01-03T09:15:00+00:00" />
+			<string key="concept:name" value="Analyze Defect" />
+			<string key="lifecycle:transition" value="complete" />
+			<string key="defectType" value="6" />
+			<string key="phoneType" value="T3" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="77" />
+					<string key="1" value="79" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="77" />
+			<string key="org:resource" value="SolverS2" />
+			<date key="time:timestamp" value="1970-01-03T09:45:00+00:00" />
+			<string key="concept:name" value="Repair (Simple)" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="78" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="78" />
+			<string key="org:resource" value="Tester5" />
+			<date key="time:timestamp" value="1970-01-03T09:52:00+00:00" />
+			<string key="concept:name" value="Test Repair" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<string key="numberRepairs" value="1" />
+			<string key="defectFixed" value="false" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="80" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="79" />
+			<string key="org:resource" value="System" />
+			<date key="time:timestamp" value="1970-01-03T09:57:00+00:00" />
+			<string key="concept:name" value="Inform User" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="86" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="80" />
+			<string key="org:resource" value="System" />
+			<date key="time:timestamp" value="1970-01-03T10:01:00+00:00" />
+			<string key="concept:name" value="Restart Repair" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="81" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="81" />
+			<string key="org:resource" value="SolverS1" />
+			<date key="time:timestamp" value="1970-01-03T10:06:00+00:00" />
+			<string key="concept:name" value="Repair (Simple)" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="82" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="82" />
+			<string key="org:resource" value="Tester3" />
+			<date key="time:timestamp" value="1970-01-03T10:14:00+00:00" />
+			<string key="concept:name" value="Test Repair" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<string key="numberRepairs" value="2" />
+			<string key="defectFixed" value="false" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="83" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="83" />
+			<string key="org:resource" value="System" />
+			<date key="time:timestamp" value="1970-01-03T10:21:00+00:00" />
+			<string key="concept:name" value="Restart Repair" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="84" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="84" />
+			<string key="org:resource" value="SolverC2" />
+			<date key="time:timestamp" value="1970-01-03T10:39:00+00:00" />
+			<string key="concept:name" value="Repair (Complex)" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="85" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="85" />
+			<string key="org:resource" value="Tester5" />
+			<date key="time:timestamp" value="1970-01-03T10:46:00+00:00" />
+			<string key="concept:name" value="Test Repair" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<string key="numberRepairs" value="2" />
+			<string key="defectFixed" value="true" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="86" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="86" />
+			<string key="org:resource" value="System" />
+			<date key="time:timestamp" value="1970-01-03T10:53:00+00:00" />
+			<string key="concept:name" value="Archive Repair" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<string key="numberRepairs" value="2" />
+			<string key="defectFixed" value="true" />
+			<list key="po_successors">
+				<values>
+				</values>
+			</list>
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="113" />
+		<string key="description" value="Simulated process instance" />
+		<float key="multiplicity" value="26.0" />
+		<float key="po_name" value="5.0" />
+		<event>
+			<int key="identity:id" value="111" />
+			<string key="org:resource" value="System" />
+			<date key="time:timestamp" value="1970-01-04T18:55:00+00:00" />
+			<string key="concept:name" value="Register" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="112" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="112" />
+			<string key="org:resource" value="Tester2" />
+			<date key="time:timestamp" value="1970-01-04T19:01:00+00:00" />
+			<string key="concept:name" value="Analyze Defect" />
+			<string key="lifecycle:transition" value="complete" />
+			<string key="defectType" value="6" />
+			<string key="phoneType" value="T3" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="113" />
+					<string key="1" value="116" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="113" />
+			<string key="org:resource" value="SolverS2" />
+			<date key="time:timestamp" value="1970-01-04T19:16:00+00:00" />
+			<string key="concept:name" value="Repair (Simple)" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="114" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="114" />
+			<string key="org:resource" value="Tester5" />
+			<date key="time:timestamp" value="1970-01-04T19:22:00+00:00" />
+			<string key="concept:name" value="Test Repair" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<string key="numberRepairs" value="1" />
+			<string key="defectFixed" value="false" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="115" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="115" />
+			<string key="org:resource" value="System" />
+			<date key="time:timestamp" value="1970-01-04T19:27:00+00:00" />
+			<string key="concept:name" value="Restart Repair" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="117" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="116" />
+			<string key="org:resource" value="System" />
+			<date key="time:timestamp" value="1970-01-04T19:37:00+00:00" />
+			<string key="concept:name" value="Inform User" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="119" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="117" />
+			<string key="org:resource" value="SolverC1" />
+			<date key="time:timestamp" value="1970-01-04T19:41:00+00:00" />
+			<string key="concept:name" value="Repair (Complex)" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="118" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="118" />
+			<string key="org:resource" value="Tester5" />
+			<date key="time:timestamp" value="1970-01-04T19:51:00+00:00" />
+			<string key="concept:name" value="Test Repair" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<string key="numberRepairs" value="1" />
+			<string key="defectFixed" value="true" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="119" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="119" />
+			<string key="org:resource" value="System" />
+			<date key="time:timestamp" value="1970-01-04T19:59:00+00:00" />
+			<string key="concept:name" value="Archive Repair" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<string key="numberRepairs" value="1" />
+			<string key="defectFixed" value="true" />
+			<list key="po_successors">
+				<values>
+				</values>
+			</list>
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="122" />
+		<string key="description" value="Simulated process instance" />
+		<float key="multiplicity" value="80.0" />
+		<float key="po_name" value="6.0" />
+		<event>
+			<int key="identity:id" value="180" />
+			<string key="org:resource" value="System" />
+			<date key="time:timestamp" value="1970-01-04T11:27:00+00:00" />
+			<string key="concept:name" value="Register" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="181" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="181" />
+			<string key="org:resource" value="Tester6" />
+			<date key="time:timestamp" value="1970-01-04T11:34:00+00:00" />
+			<string key="concept:name" value="Analyze Defect" />
+			<string key="lifecycle:transition" value="complete" />
+			<string key="defectType" value="2" />
+			<string key="phoneType" value="T1" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="182" />
+					<string key="1" value="183" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="182" />
+			<string key="org:resource" value="SolverS1" />
+			<date key="time:timestamp" value="1970-01-04T11:55:00+00:00" />
+			<string key="concept:name" value="Repair (Simple)" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="184" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="183" />
+			<string key="org:resource" value="System" />
+			<date key="time:timestamp" value="1970-01-04T11:56:00+00:00" />
+			<string key="concept:name" value="Inform User" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="191" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="184" />
+			<string key="org:resource" value="Tester5" />
+			<date key="time:timestamp" value="1970-01-04T12:04:00+00:00" />
+			<string key="concept:name" value="Test Repair" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<string key="numberRepairs" value="1" />
+			<string key="defectFixed" value="false" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="185" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="185" />
+			<string key="org:resource" value="System" />
+			<date key="time:timestamp" value="1970-01-04T12:13:00+00:00" />
+			<string key="concept:name" value="Restart Repair" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="186" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="186" />
+			<string key="org:resource" value="SolverS1" />
+			<date key="time:timestamp" value="1970-01-04T12:19:00+00:00" />
+			<string key="concept:name" value="Repair (Simple)" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="187" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="187" />
+			<string key="org:resource" value="Tester5" />
+			<date key="time:timestamp" value="1970-01-04T12:29:00+00:00" />
+			<string key="concept:name" value="Test Repair" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<string key="numberRepairs" value="2" />
+			<string key="defectFixed" value="false" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="188" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="188" />
+			<string key="org:resource" value="System" />
+			<date key="time:timestamp" value="1970-01-04T12:37:00+00:00" />
+			<string key="concept:name" value="Restart Repair" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="189" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="189" />
+			<string key="org:resource" value="SolverS3" />
+			<date key="time:timestamp" value="1970-01-04T12:57:00+00:00" />
+			<string key="concept:name" value="Repair (Simple)" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="190" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="190" />
+			<string key="org:resource" value="Tester1" />
+			<date key="time:timestamp" value="1970-01-04T13:05:00+00:00" />
+			<string key="concept:name" value="Test Repair" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<string key="numberRepairs" value="3" />
+			<string key="defectFixed" value="true" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="191" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="191" />
+			<string key="org:resource" value="System" />
+			<date key="time:timestamp" value="1970-01-04T13:14:00+00:00" />
+			<string key="concept:name" value="Archive Repair" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<string key="numberRepairs" value="3" />
+			<string key="defectFixed" value="true" />
+			<list key="po_successors">
+				<values>
+				</values>
+			</list>
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="125" />
+		<string key="description" value="Simulated process instance" />
+		<float key="multiplicity" value="36.0" />
+		<float key="po_name" value="7.0" />
+		<event>
+			<int key="identity:id" value="204" />
+			<string key="org:resource" value="System" />
+			<date key="time:timestamp" value="1970-01-03T22:37:00+00:00" />
+			<string key="concept:name" value="Register" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="205" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="205" />
+			<string key="org:resource" value="Tester2" />
+			<date key="time:timestamp" value="1970-01-03T22:43:00+00:00" />
+			<string key="concept:name" value="Analyze Defect" />
+			<string key="lifecycle:transition" value="complete" />
+			<string key="defectType" value="9" />
+			<string key="phoneType" value="T2" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="206" />
+					<string key="1" value="208" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="206" />
+			<string key="org:resource" value="SolverC2" />
+			<date key="time:timestamp" value="1970-01-03T23:22:00+00:00" />
+			<string key="concept:name" value="Repair (Complex)" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="207" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="207" />
+			<string key="org:resource" value="Tester6" />
+			<date key="time:timestamp" value="1970-01-03T23:28:00+00:00" />
+			<string key="concept:name" value="Test Repair" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<string key="numberRepairs" value="0" />
+			<string key="defectFixed" value="false" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="209" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="208" />
+			<string key="org:resource" value="System" />
+			<date key="time:timestamp" value="1970-01-03T23:30:00+00:00" />
+			<string key="concept:name" value="Inform User" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="212" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="209" />
+			<string key="org:resource" value="System" />
+			<date key="time:timestamp" value="1970-01-03T23:36:00+00:00" />
+			<string key="concept:name" value="Restart Repair" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="210" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="210" />
+			<string key="org:resource" value="SolverC1" />
+			<date key="time:timestamp" value="1970-01-03T23:53:00+00:00" />
+			<string key="concept:name" value="Repair (Complex)" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="211" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="211" />
+			<string key="org:resource" value="Tester4" />
+			<date key="time:timestamp" value="1970-01-04T00:00:00+00:00" />
+			<string key="concept:name" value="Test Repair" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<string key="numberRepairs" value="0" />
+			<string key="defectFixed" value="true" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="212" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="212" />
+			<string key="org:resource" value="System" />
+			<date key="time:timestamp" value="1970-01-04T00:10:00+00:00" />
+			<string key="concept:name" value="Archive Repair" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<string key="numberRepairs" value="0" />
+			<string key="defectFixed" value="true" />
+			<list key="po_successors">
+				<values>
+				</values>
+			</list>
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="165" />
+		<string key="description" value="Simulated process instance" />
+		<float key="multiplicity" value="11.0" />
+		<float key="po_name" value="8.0" />
+		<event>
+			<int key="identity:id" value="537" />
+			<string key="org:resource" value="System" />
+			<date key="time:timestamp" value="1970-01-06T00:22:00+00:00" />
+			<string key="concept:name" value="Register" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="538" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="538" />
+			<string key="org:resource" value="Tester5" />
+			<date key="time:timestamp" value="1970-01-06T00:31:00+00:00" />
+			<string key="concept:name" value="Analyze Defect" />
+			<string key="lifecycle:transition" value="complete" />
+			<string key="defectType" value="10" />
+			<string key="phoneType" value="T1" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="539" />
+					<string key="1" value="541" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="539" />
+			<string key="org:resource" value="SolverC1" />
+			<date key="time:timestamp" value="1970-01-06T00:55:00+00:00" />
+			<string key="concept:name" value="Repair (Complex)" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="540" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="540" />
+			<string key="org:resource" value="Tester2" />
+			<date key="time:timestamp" value="1970-01-06T01:05:00+00:00" />
+			<string key="concept:name" value="Test Repair" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<string key="numberRepairs" value="0" />
+			<string key="defectFixed" value="false" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="542" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="541" />
+			<string key="org:resource" value="System" />
+			<date key="time:timestamp" value="1970-01-06T01:09:00+00:00" />
+			<string key="concept:name" value="Inform User" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="548" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="542" />
+			<string key="org:resource" value="System" />
+			<date key="time:timestamp" value="1970-01-06T01:15:00+00:00" />
+			<string key="concept:name" value="Restart Repair" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="543" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="543" />
+			<string key="org:resource" value="SolverC2" />
+			<date key="time:timestamp" value="1970-01-06T01:33:00+00:00" />
+			<string key="concept:name" value="Repair (Complex)" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="544" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="544" />
+			<string key="org:resource" value="Tester2" />
+			<date key="time:timestamp" value="1970-01-06T01:41:00+00:00" />
+			<string key="concept:name" value="Test Repair" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<string key="numberRepairs" value="0" />
+			<string key="defectFixed" value="false" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="545" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="545" />
+			<string key="org:resource" value="System" />
+			<date key="time:timestamp" value="1970-01-06T01:49:00+00:00" />
+			<string key="concept:name" value="Restart Repair" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="546" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="546" />
+			<string key="org:resource" value="SolverC1" />
+			<date key="time:timestamp" value="1970-01-06T02:00:00+00:00" />
+			<string key="concept:name" value="Repair (Complex)" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="547" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="547" />
+			<string key="org:resource" value="Tester4" />
+			<date key="time:timestamp" value="1970-01-06T02:06:00+00:00" />
+			<string key="concept:name" value="Test Repair" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<string key="numberRepairs" value="0" />
+			<string key="defectFixed" value="true" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="548" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="548" />
+			<string key="org:resource" value="System" />
+			<date key="time:timestamp" value="1970-01-06T02:16:00+00:00" />
+			<string key="concept:name" value="Archive Repair" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<string key="numberRepairs" value="0" />
+			<string key="defectFixed" value="true" />
+			<list key="po_successors">
+				<values>
+				</values>
+			</list>
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="501" />
+		<string key="description" value="Simulated process instance" />
+		<float key="multiplicity" value="2.0" />
+		<float key="po_name" value="9.0" />
+		<event>
+			<int key="identity:id" value="3216" />
+			<string key="org:resource" value="System" />
+			<date key="time:timestamp" value="1970-01-12T08:24:00+00:00" />
+			<string key="concept:name" value="Register" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="3217" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="3217" />
+			<string key="org:resource" value="Tester5" />
+			<date key="time:timestamp" value="1970-01-12T08:30:00+00:00" />
+			<string key="concept:name" value="Analyze Defect" />
+			<string key="lifecycle:transition" value="complete" />
+			<string key="defectType" value="10" />
+			<string key="phoneType" value="T3" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="3218" />
+					<string key="1" value="3219" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="3218" />
+			<string key="org:resource" value="System" />
+			<date key="time:timestamp" value="1970-01-12T08:45:00+00:00" />
+			<string key="concept:name" value="Inform User" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="3230" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="3219" />
+			<string key="org:resource" value="SolverC2" />
+			<date key="time:timestamp" value="1970-01-12T08:47:00+00:00" />
+			<string key="concept:name" value="Repair (Complex)" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="3220" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="3220" />
+			<string key="org:resource" value="Tester3" />
+			<date key="time:timestamp" value="1970-01-12T08:52:00+00:00" />
+			<string key="concept:name" value="Test Repair" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<string key="numberRepairs" value="0" />
+			<string key="defectFixed" value="false" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="3221" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="3221" />
+			<string key="org:resource" value="System" />
+			<date key="time:timestamp" value="1970-01-12T08:58:00+00:00" />
+			<string key="concept:name" value="Restart Repair" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="3222" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="3222" />
+			<string key="org:resource" value="SolverC1" />
+			<date key="time:timestamp" value="1970-01-12T09:12:00+00:00" />
+			<string key="concept:name" value="Repair (Complex)" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="3223" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="3223" />
+			<string key="org:resource" value="Tester2" />
+			<date key="time:timestamp" value="1970-01-12T09:20:00+00:00" />
+			<string key="concept:name" value="Test Repair" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<string key="numberRepairs" value="0" />
+			<string key="defectFixed" value="false" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="3224" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="3224" />
+			<string key="org:resource" value="System" />
+			<date key="time:timestamp" value="1970-01-12T09:26:00+00:00" />
+			<string key="concept:name" value="Restart Repair" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="3225" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="3225" />
+			<string key="org:resource" value="SolverC1" />
+			<date key="time:timestamp" value="1970-01-12T09:36:00+00:00" />
+			<string key="concept:name" value="Repair (Complex)" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="3226" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="3226" />
+			<string key="org:resource" value="Tester5" />
+			<date key="time:timestamp" value="1970-01-12T09:42:00+00:00" />
+			<string key="concept:name" value="Test Repair" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<string key="numberRepairs" value="0" />
+			<string key="defectFixed" value="false" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="3227" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="3227" />
+			<string key="org:resource" value="System" />
+			<date key="time:timestamp" value="1970-01-12T09:51:00+00:00" />
+			<string key="concept:name" value="Restart Repair" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="3228" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="3228" />
+			<string key="org:resource" value="SolverC3" />
+			<date key="time:timestamp" value="1970-01-12T10:40:00+00:00" />
+			<string key="concept:name" value="Repair (Complex)" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<float key="numberRepairs" value="nan" />
+			<float key="defectFixed" value="nan" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="3229" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="3229" />
+			<string key="org:resource" value="Tester1" />
+			<date key="time:timestamp" value="1970-01-12T10:48:00+00:00" />
+			<string key="concept:name" value="Test Repair" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<string key="numberRepairs" value="0" />
+			<string key="defectFixed" value="true" />
+			<list key="po_successors">
+				<values>
+					<string key="0" value="3230" />
+				</values>
+			</list>
+		</event>
+		<event>
+			<int key="identity:id" value="3230" />
+			<string key="org:resource" value="System" />
+			<date key="time:timestamp" value="1970-01-12T10:53:00+00:00" />
+			<string key="concept:name" value="Archive Repair" />
+			<string key="lifecycle:transition" value="complete" />
+			<float key="defectType" value="nan" />
+			<float key="phoneType" value="nan" />
+			<string key="numberRepairs" value="0" />
+			<string key="defectFixed" value="true" />
+			<list key="po_successors">
+				<values>
+				</values>
+			</list>
+		</event>
+	</trace>
+</log>

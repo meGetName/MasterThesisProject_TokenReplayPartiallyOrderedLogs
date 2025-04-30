@@ -1,0 +1,10 @@
+Observed problems for experiments at time: 2025-04-23 21:39:37.406788.
+PO_successors none found in file data/partially_ordered_logs/BPI12_olog_alpha_logwise_oneRperPoVar.xes in run 43.0at event ids 10110.
+PO_successors none found in file data/partially_ordered_logs/BPI12_olog_alpha_logwise_oneRperPoVar.xes in run 56.0at event ids 18541.
+PO_successors none found in file data/partially_ordered_logs/BPI12_olog_alpha_logwise_oneRperPoVar.xes in run 43.0at event ids 10110.
+PO_successors none found in file data/partially_ordered_logs/BPI12_olog_alpha_logwise_oneRperPoVar.xes in run 56.0at event ids 18541.
+PO_successors none found in file data/partially_ordered_logs/bpi2019_C_alpha_logwise_oneRperPoVar.xes in run 149.0at event ids 24913.
+PO_successors none found in file data/partially_ordered_logs/bpi2019_C_alpha_logwise_oneRperPoVar.xes in run 149.0at event ids 24913.
+PO_successors none found in file data/partially_ordered_logs/reviewing_alpha_logwise_oneRperPoVar.xes in run 30.0at event ids 650.
+PO_successors none found in file data/partially_ordered_logs/reviewing_alpha_logwise_oneRperPoVar.xes in run 30.0at event ids 650.
+END LOG FOR EXPERIMENT AT TIME 2025-04-23 21:39:37.406788.

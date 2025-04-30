@@ -31,7 +31,7 @@ class RunConformanceResult:
     def calculate_and_set_conformance_level(self):
         def calculate_conformance_level_for_tokens(produced: int, consumed: int, missing: int, remaining: int) -> float:
             first_term: float = 1 - (missing/consumed)
-            second_term: float = 1- (remaining/produced)
+            second_term: float = 1 - (remaining/produced)
             return (first_term + second_term)/2
 
         self.conformance_level_min = calculate_conformance_level_for_tokens(

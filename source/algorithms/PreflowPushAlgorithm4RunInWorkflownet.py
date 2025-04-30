@@ -1,7 +1,8 @@
 import math
 from collections import deque
 from enum import Enum
-
+import networkx as nx
+import matplotlib.pyplot as plt
 from networkx import DiGraph
 
 from MasterThesisProject.source.structures.Run import Run, Event4Run
@@ -46,6 +47,7 @@ class MaxFlowNetwork:
         maximal_possible_flow : int
             correct initilization is done in the construction of the flow network
     """
+
     def __init__(self, sink: Node4FlowNetwork, source: Node4FlowNetwork, network: DiGraph, number_sink_neighbor: int,
                  sink_neighbors: set[Node4FlowNetwork]):
         self.sink = sink
@@ -59,7 +61,7 @@ class MaxFlowNetwork:
 
 
 def find_optimal_tokenflow_for_place(place: PlaceWorkflowNet, run: Run, heuristic: SinglePlaceTokenResult) \
-                                     -> SinglePlaceTokenResult:
+        -> SinglePlaceTokenResult:
     """
     Function calculates the minimal possible number of missing tokens in the optimal tokenflow.
     :param place:
@@ -68,9 +70,10 @@ def find_optimal_tokenflow_for_place(place: PlaceWorkflowNet, run: Run, heuristi
     :return:
     """
 
-    def build_maximal_flow_problem(consumed_token: int) -> MaxFlowNetwork:
+    def build_maximal_flow_problem(consumed_token: int, produced_token=0) -> MaxFlowNetwork:
         """
         Build network and also prepare initial labeling.
+        :param produced_token:
         :param consumed_token:
         :return:
         """
@@ -79,7 +82,9 @@ def find_optimal_tokenflow_for_place(place: PlaceWorkflowNet, run: Run, heuristi
         size_flow_network = 2 * len(run.total_order.order) + 2
         default_label: int = size_flow_network - 1
         source: Node4FlowNetwork = Node4FlowNetwork(NodeType.SOURCE, None, size_flow_network)
+        source.excess = produced_token
         graph: DiGraph = DiGraph()
+        graph.add_nodes_from([sink, source])
         result_network: MaxFlowNetwork = MaxFlowNetwork(sink, source, graph, 0, set())
         partial_order_run: DiGraph = run.partial_order
         list_events: list[Event4Run] = list(partial_order_run)
@@ -116,13 +121,25 @@ def find_optimal_tokenflow_for_place(place: PlaceWorkflowNet, run: Run, heuristi
         while queue_for_labeling:
             next_node: Node4FlowNetwork = queue_for_labeling.popleft()
             neighbor_without_label: set[Node4FlowNetwork] = {node for node in graph.predecessors(next_node)
-                            if (node.label == default_label and graph.edges[node, next_node]['capacity'] != 0)}
+                                                             if (node.label == default_label and graph.edges[node, next_node]['capacity'] != 0)}
             for neighbor_node in neighbor_without_label:
                 neighbor_node.label = next_node.label + 1
             queue_for_labeling.extend(neighbor_without_label)
         return result_network
 
-    flow_network: MaxFlowNetwork = build_maximal_flow_problem(heuristic.consumed_token)
+    # If the heuristic is not provided we have to calculate the consumed token now
+    number_consumed_tokens: int = 0
+    number_produced_tokens: int = 0
+    if heuristic is None:
+        for event_in_run in run.labels:
+            if place in event_in_run.label.preset:
+                number_consumed_tokens += 1
+            if place in event_in_run.label.postset:
+                number_produced_tokens += 1
+    else:
+        number_consumed_tokens = heuristic.consumed_token
+        number_produced_tokens = heuristic.produced_token
+    flow_network: MaxFlowNetwork = build_maximal_flow_problem(number_consumed_tokens, number_produced_tokens)
     active_nodes: set[Node4FlowNetwork] = set()
 
     def do_initial_push():
@@ -139,9 +156,13 @@ def find_optimal_tokenflow_for_place(place: PlaceWorkflowNet, run: Run, heuristi
             flow_network.source.excess -= 1
             flow_network.maximal_possible_flow += 1
             active_nodes.add(source_neighbor)
+        if flow_network.source.excess != 0:
+            raise Exception("Source has still excess after initial push.")
 
     def push(from_node: Node4FlowNetwork, to_node: Node4FlowNetwork):
         amount: int = min(from_node.excess, flow_network.network.edges[from_node, to_node]["residual"])
+        if amount < 0 or amount > from_node.excess:
+            raise Exception("A push operation pushes more than possible.")
         flow_network.network.edges[from_node, to_node]["flow"] += amount
         flow_network.network.edges[to_node, from_node]["flow"] -= amount
         flow_network.network.edges[from_node, to_node]["residual"] -= amount
@@ -153,7 +174,8 @@ def find_optimal_tokenflow_for_place(place: PlaceWorkflowNet, run: Run, heuristi
             flow_network.realized_flow += amount
 
     def relabel(node: Node4FlowNetwork):
-        new_label: int = math.inf
+        # effectively infinity
+        new_label: int = flow_network.source.label + 2
         for neighbor in flow_network.network.neighbors(node):
             if flow_network.network.edges[node, neighbor]["residual"] > 0:
                 new_label = min(new_label, neighbor.label)
@@ -169,27 +191,26 @@ def find_optimal_tokenflow_for_place(place: PlaceWorkflowNet, run: Run, heuristi
                     if node.label == neighbor_node.label + 1:
                         push(node, neighbor_node)
                         is_neighbor_sink_or_source: bool = (neighbor_node == flow_network.source or neighbor_node == flow_network.sink)
-                        if neighbor_node not in active_nodes and not is_neighbor_sink_or_source:
+                        is_neighbor_new_active_node: bool = neighbor_node.excess > 0 and neighbor_node not in active_nodes
+                        if is_neighbor_new_active_node and not is_neighbor_sink_or_source:
                             active_nodes.add(neighbor_node)
+                        if len(active_nodes) > number_produced_tokens:
+                            raise Exception("There is more excess flow than produced tokens in the net.")
                         if node.excess == 0:
-                            break
-            else:
-                relabel(node)
-
+                            return
+            relabel(node)
 
     do_initial_push()
-    while (len(active_nodes) != 0 and flow_network.unreachable_sink_neighbors < flow_network.number_sink_neighbors and
-           flow_network.realized_flow < flow_network.maximal_possible_flow):
+    while len(active_nodes) != 0:
         current_node: Node4FlowNetwork = max(active_nodes, key=lambda node: node.label)
         active_nodes.remove(current_node)
         discharge(current_node)
 
-
-    maximal_flow: int = sum(flow_network.network.edges[sink_neighbor, flow_network.sink ]["flow"]
+    maximal_flow: int = sum(flow_network.network.edges[sink_neighbor, flow_network.sink]["flow"]
                             for sink_neighbor in flow_network.sink_neighbors)
-    missing_token: int = heuristic.consumed_token - maximal_flow
-    remaining_token: int = heuristic.produced_token - heuristic.consumed_token + missing_token
-    result: SinglePlaceTokenResult = SinglePlaceTokenResult(heuristic.produced_token, heuristic.consumed_token,
+    missing_token: int = number_consumed_tokens - maximal_flow
+    remaining_token: int = number_produced_tokens - number_consumed_tokens + missing_token
+    result: SinglePlaceTokenResult = SinglePlaceTokenResult(number_produced_tokens, number_consumed_tokens,
                                                             missing_token, missing_token, remaining_token,
                                                             remaining_token, True)
     return result

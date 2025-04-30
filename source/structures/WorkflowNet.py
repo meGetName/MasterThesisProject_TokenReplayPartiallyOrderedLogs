@@ -17,8 +17,9 @@ class PlaceWorkflowNet:
 
 
 class TransitionWorkflowNet:
-    def __init__(self, name: str, preset: set = None, postset: set = None):
+    def __init__(self, name: str, activity_desription=None, preset: set = None, postset: set = None):
         self.name = name
+        self.activity_description = activity_desription if activity_desription is not None else "MISSING"
         self.preset = preset if preset is not None else set()
         self.postset = postset if postset is not None else set()
 
@@ -26,7 +27,7 @@ class TransitionWorkflowNet:
         return self.name
 
     def make_inverted_copy(self):
-        return TransitionWorkflowNet(self.name, self.postset, self.preset)
+        return TransitionWorkflowNet(self.name, preset=self.postset, postset=self.preset)
 
     def add_place_to_postset(self, place: PlaceWorkflowNet):
         if place is None or not isinstance(place, PlaceWorkflowNet):
@@ -68,6 +69,8 @@ class WorkflowNet:
                                              end_place: PlaceWorkflowNet) -> "WorkflowNet":
         places: set[PlaceWorkflowNet] = set()
         graph: DiGraph = DiGraph()
+        graph.add_nodes_from(transitions)
+        graph.add_nodes_from([start_place, end_place])
         for transition in transitions:
             for place in transition.preset:
                 graph.add_edge(place, transition)
