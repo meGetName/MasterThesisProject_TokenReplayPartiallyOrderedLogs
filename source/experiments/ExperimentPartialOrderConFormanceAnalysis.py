@@ -14,41 +14,41 @@ from MasterThesisProject.source.utils.ImporterPnmlFileToInternalWorkflowNet impo
 
 # Definition of experiment parameters
 # TO combination
-# net_log_pairs = [
-#     {"log": "BPI2012_alog.xes", "net": "bpi2012_alog_5.pnml"},
-#     {"log": "BPI2012_alog.xes", "net": "bpi2012_alog_10.pnml"},
-#     {"log": "BPI2012_olog.xes", "net": "bpi2012_olog_5.pnml"},
-#     {"log": "BPI2012_olog.xes", "net": "bpi2012_olog_10.pnml"},
-#     {"log": "BPI2019_C.xes", "net": "bpi2019c_5.pnml"},
-#     {"log": "BPI2019_C.xes", "net": "bpi2019c_10.pnml"},
-#     {"log": "reviewing_complete_only.xes", "net": "reviewing_5.pnml"},
-#     {"log": "reviewing_complete_only.xes", "net": "reviewing_10.pnml"},
-#     {"log": "Road_Traffic_Fine.xes", "net": "roadtraffic_5.pnml"},
-#     {"log": "Road_Traffic_Fine.xes", "net": "roadtraffic_10.pnml"},
-#     {"log": "teleclaims_complete_only.xes", "net": "teleclaims_5.pnml"},
-#     {"log": "teleclaims_complete_only.xes", "net": "teleclaims_10.pnml"}
-#     {"log": "repairExampleNice.xes", "net": "repair_net.pnml"}
-#     ]
+net_log_pairs_to = [
+    {"log": "BPI2012_alog.xes", "net": "bpi2012_alog_5.pnml"},
+    {"log": "BPI2012_alog.xes", "net": "bpi2012_alog_10.pnml"},
+    {"log": "BPI2012_olog.xes", "net": "bpi2012_olog_5.pnml"},
+    {"log": "BPI2012_olog.xes", "net": "bpi2012_olog_10.pnml"},
+    {"log": "BPI2019_C.xes", "net": "bpi2019c_5.pnml"},
+    {"log": "BPI2019_C.xes", "net": "bpi2019c_10.pnml"},
+    {"log": "reviewing_complete_only.xes", "net": "reviewing_5.pnml"},
+    {"log": "reviewing_complete_only.xes", "net": "reviewing_10.pnml"},
+    {"log": "Road_Traffic_Fine.xes", "net": "roadtraffic_5.pnml"},
+    {"log": "Road_Traffic_Fine.xes", "net": "roadtraffic_10.pnml"},
+    {"log": "teleclaims_complete_only.xes", "net": "teleclaims_5.pnml"},
+    {"log": "teleclaims_complete_only.xes", "net": "teleclaims_10.pnml"},
+    {"log": "repairExampleNice.xes", "net": "repair_net.pnml"}
+    ]
 # PO combinations
-net_log_pairs = [
-   {"log": "BPI12_alog_alpha_logwise_oneRperPoVar.xes", "net": "bpi2012_alog_5.pnml"},
-   {"log": "BPI12_alog_alpha_logwise_oneRperPoVar.xes", "net": "bpi2012_alog_10.pnml"},
-   {"log": "BPI12_olog_alpha_logwise_oneRperPoVar.xes", "net": "bpi2012_olog_5.pnml"},
-   {"log": "BPI12_olog_alpha_logwise_oneRperPoVar.xes", "net": "bpi2012_olog_10.pnml"},
-   {"log": "bpi2019_C_alpha_logwise_oneRperPoVar.xes", "net": "bpi2019c_5.pnml"},
-   {"log": "bpi2019_C_alpha_logwise_oneRperPoVar.xes", "net": "bpi2019c_10.pnml"},
-   {"log": "reviewing_alpha_logwise_oneRperPoVar.xes", "net": "reviewing_5.pnml"},
-   {"log": "reviewing_alpha_logwise_oneRperPoVar.xes", "net": "reviewing_10.pnml"},
-   {"log": "roadtrafficfine_alpha_logwise_oneRperPoVar.xes", "net": "roadtraffic_5.pnml"},
-   {"log": "roadtrafficfine_alpha_logwise_oneRperPoVar.xes", "net": "roadtraffic_10.pnml"},
-   {"log": "teleclaims_alpha_logwise_oneRperPoVar.xes", "net": "teleclaims_5.pnml"},
-   {"log": "teleclaims_alpha_logwise_oneRperPoVar.xes", "net": "teleclaims_10.pnml"},
-   {"log": "Repair_alpha_logwise_oneRperPoVar.xes", "net": "repair_net.pnml"}
+net_log_pairs_po = [
+    {"log": "BPI12_alog_alpha_logwise_oneRperPoVar.xes", "net": "bpi2012_alog_5.pnml"},
+    {"log": "BPI12_alog_alpha_logwise_oneRperPoVar.xes", "net": "bpi2012_alog_10.pnml"},
+    {"log": "BPI12_olog_alpha_logwise_oneRperPoVar.xes", "net": "bpi2012_olog_5.pnml"},
+    {"log": "BPI12_olog_alpha_logwise_oneRperPoVar.xes", "net": "bpi2012_olog_10.pnml"},
+    {"log": "bpi2019_C_alpha_logwise_oneRperPoVar.xes", "net": "bpi2019c_5.pnml"},
+    {"log": "bpi2019_C_alpha_logwise_oneRperPoVar.xes", "net": "bpi2019c_10.pnml"},
+    {"log": "reviewing_alpha_logwise_oneRperPoVar.xes", "net": "reviewing_5.pnml"},
+    {"log": "reviewing_alpha_logwise_oneRperPoVar.xes", "net": "reviewing_10.pnml"},
+    {"log": "roadtrafficfine_alpha_logwise_oneRperPoVar.xes", "net": "roadtraffic_5.pnml"},
+    {"log": "roadtrafficfine_alpha_logwise_oneRperPoVar.xes", "net": "roadtraffic_10.pnml"},
+    {"log": "teleclaims_alpha_logwise_oneRperPoVar.xes", "net": "teleclaims_5.pnml"},
+    {"log": "teleclaims_alpha_logwise_oneRperPoVar.xes", "net": "teleclaims_10.pnml"},
+    {"log": "Repair_alpha_logwise_oneRperPoVar.xes", "net": "repair_net.pnml"}
 ]
 # Parameter to control experiment
 number_tests_per_pair: int = 100
 is_experiment_with_po: bool = True
-do_persist_results: bool = True
+do_persist_results: bool = False
 
 # The following parameter should normally not be changed but if you want to experiment feel free.
 include_invalid_data: bool = True
@@ -121,7 +121,7 @@ column_names_place_statistics = ["Start time",
 results_this_experiment: DataFrame = pd.DataFrame(columns=colum_names_general_results)
 
 
-def do_experiment_for_data():
+def do_experiment_for_data(net_log_pair: dict[str, str]):
     # After each iteration we save the subresults to avoid data loss. In the end we will produce a master file
     iteration_sub_results: list[DataFrame] = []
     net_name = net_log_pair["net"].replace(".pnml", "")
@@ -263,10 +263,12 @@ def do_experiment_for_data():
     if do_persist_results:
         combined_results.to_csv(file_name_total_result, index=False)
 
+
 timestamp_total_experiment: str = str(datetime.now())
 with open("WrongPOXesReadingLog.txt", "a") as log_file:
     log_file.write("Observed problems for experiments at time: " + timestamp_total_experiment + ".\n")
+net_log_pairs = net_log_pairs_po if is_experiment_with_po else net_log_pairs_to
 for net_log_pair in net_log_pairs:
-    do_experiment_for_data()
+    do_experiment_for_data(net_log_pair)
 with open("WrongPOXesReadingLog.txt", "a") as log_file:
-    log_file.write("END LOG FOR EXPERIMENT AT TIME " + timestamp_total_experiment +".\n")
+    log_file.write("END LOG FOR EXPERIMENT AT TIME " + timestamp_total_experiment + ".\n")
