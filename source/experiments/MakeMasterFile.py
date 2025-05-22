@@ -4,7 +4,7 @@ import os
 import pandas as pd
 from pandas import DataFrame
 
-path_for_masterfile: str = "results/po/general/"
+path_for_masterfile: str = "results/to/place_details/"
 result_csv_files = os.listdir(path_for_masterfile)
 
 all_data: DataFrame = pd.concat([pd.read_csv(path_for_masterfile + file_name) for file_name in result_csv_files], ignore_index=True)

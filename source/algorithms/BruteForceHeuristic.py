@@ -25,6 +25,9 @@ def do_brute_force_heuristic_for_token_analysis(run: Run, model: WorkflowNet, pl
     flow_relation = model.graph
     result: SinglePlaceTokenResult = SinglePlaceTokenResult()
     result.is_precise = False
+    # Following flag keeps track if during the heuristic we had to distribute tokens along multiple
+    # branches of concurrency; if it stays false until the end, we can mark the result as already correct afterward
+    had_critical_situation: bool = False
 
     for event in order_iteration.order:
         transition = run.labels[event]
@@ -43,6 +46,10 @@ def do_brute_force_heuristic_for_token_analysis(run: Run, model: WorkflowNet, pl
         if has_event_production:
             result.produced_token += 1
             event_to_marking[event] += 1
+        # check if we are at a branch of concurrency and have tokens available; update flag correspondingly
+        iterator_succesors = run.partial_order.predecessors(event) if do_backward_heuristic else run.partial_order.neighbors(event)
+        if len(list(iterator_succesors)) > 1 and event_to_marking[event] > 0:
+            had_critical_situation = True
         # push token to next event
         next_event = order_iteration.event_to_successor_event[event]
         if next_event is None:
@@ -56,5 +63,7 @@ def do_brute_force_heuristic_for_token_analysis(run: Run, model: WorkflowNet, pl
         result.produced_token, result.consumed_token = result.consumed_token, result.produced_token
         corrected_value_remaining_token = result.produced_token - result.consumed_token + result.remaining_token_max
         result.missing_token_max, result.remaining_token_max = result.remaining_token_max, corrected_value_remaining_token
-
+    # If we did not have a critical situation we can mark the result as precise
+    if not had_critical_situation:
+        result.mark_self_as_precise()
     return result

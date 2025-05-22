@@ -59,7 +59,9 @@ def calculate_token_replay_conformance_norm_for_partial_order(event_log: Partial
                 # Try forward heuristic and see if it already fits
                 forward_heuristic = do_brute_force_heuristic_for_token_analysis(run, model, place, False)
                 missing_token_theoretic_optimum = max(0, forward_heuristic.consumed_token - forward_heuristic.produced_token)
-                if missing_token_theoretic_optimum == forward_heuristic.missing_token_max or is_total_order:
+                # Note: the heuristic itself might already have detected its own preciseness!
+                if (missing_token_theoretic_optimum == forward_heuristic.missing_token_max or forward_heuristic.is_precise
+                        or is_total_order):
                     forward_heuristic.mark_self_as_precise()
                     result_run.add_single_place_result(forward_heuristic)
                     result_run.number_places_decided_forward_heuristic += 1
@@ -68,14 +70,14 @@ def calculate_token_replay_conformance_norm_for_partial_order(event_log: Partial
                     continue
                 # Forward heuristic failed, now try backward heuristic.
                 backward_heuristic: SinglePlaceTokenResult = do_brute_force_heuristic_for_token_analysis(run, model, place, True)
-                if missing_token_theoretic_optimum == backward_heuristic.missing_token_max:
+                if missing_token_theoretic_optimum == backward_heuristic.missing_token_max or backward_heuristic.is_precise:
                     backward_heuristic.mark_self_as_precise()
                     result_run.add_single_place_result(backward_heuristic)
                     result_run.number_places_decided_backward_heuristic += 1
                     place_to_decision_statistic[place.name].backward_heuristic += 1
                     place_to_decision_statistic[place.name].add_single_place_result(backward_heuristic)
                     continue
-            # Both heuristics failed or were now allowed; now depending on input flag we either do the precise calculation or only estimate
+            # Both heuristics failed or were not allowed; now depending on input flag we either do the precise calculation or only estimate
             place_to_decision_statistic[place.name].maximal_flow += 1
             result_to_use: SinglePlaceTokenResult
             if do_calculate_precise_result:

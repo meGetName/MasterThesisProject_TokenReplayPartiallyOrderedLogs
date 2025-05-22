@@ -46,9 +46,9 @@ net_log_pairs_po = [
     {"log": "Repair_alpha_logwise_oneRperPoVar.xes", "net": "repair_net.pnml"}
 ]
 # Parameter to control experiment
-number_tests_per_pair: int = 100
+number_tests_per_pair: int = 5
 is_experiment_with_po: bool = True
-do_persist_results: bool = False
+do_persist_results: bool = True
 
 # The following parameter should normally not be changed but if you want to experiment feel free.
 include_invalid_data: bool = True
